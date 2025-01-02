@@ -10,9 +10,9 @@ class User(AbstractBaseUser, PermissionsMixin, BaseModel):
     first_name = models.CharField("Имя", max_length=30, blank=True)
     last_name = models.CharField("Фамилия", max_length=30, blank=True)
     suname = models.CharField("Отчество", max_length=30, blank=True)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField("Активен", default=False)
     is_staff = models.BooleanField(default=False)
-    date_joined = models.DateTimeField(default=timezone.now)
+    date_joined = models.DateTimeField("Дата регистрации",default=timezone.now)
     phone = PhoneNumberField(
         verbose_name="Телефон",
         help_text="Введите номер телефона",

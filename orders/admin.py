@@ -5,18 +5,18 @@ from django.utils.html import format_html
 class OrderAdmin(admin.ModelAdmin):
     # Поля, которые будут отображаться в списке заказов
     list_display = (
-        'total_amount',
-        'uid',                   # Уникальный идентификатор
-        'created',               # Дата создания
-        'updated',               # Дата обновления
+        'total_amount',          # Общая сумма
+        'viewed',                # Просмотрен ли заказ
         'is_active',             # Активен ли заказ
         'user_profile',          # Профиль пользователя
         'settlement',            # Населенный пункт
+        'created',               # Дата создания
+        'updated',               # Дата обновления
+        'email',                 # Email
+        'phone',                 # Телефон
         'first_name',            # Имя
         'last_name',             # Фамилия
-        'phone',                 # Телефон
-        'email',                 # Email
-        'viewed',                # Просмотрен ли заказ
+        'uid',                   # Уникальный идентификатор
         'accept_reglament',      # Принят ли регламент
         'accept_agreement',      # Принят ли договор
         'get_registration_fee',  # Регистрационный сбор
@@ -37,6 +37,7 @@ class OrderAdmin(admin.ModelAdmin):
         'created',               # Фильтр по дате создания
         'updated',               # Фильтр по дате обновления
     )
+    
 
     # Поля, по которым можно искать заказы
     search_fields = (

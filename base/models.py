@@ -38,11 +38,11 @@ class ActiveManager(models.Manager):
 class BaseModel(models.Model):
     """Базовый класс для всех моделей."""
 
-    is_active = models.BooleanField(default=True, db_index=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    deleted = models.DateTimeField(null=True, blank=True)
-    uid = models.UUIDField(default=uuid.uuid4, editable=False)
+    is_active = models.BooleanField(default=True, db_index=True, verbose_name="Активен")
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    updated = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
+    deleted = models.DateTimeField(null=True, blank=True, verbose_name="Дата удаления")
+    uid = models.UUIDField(default=uuid.uuid4, editable=False, verbose_name="Уникальный идентификатор")
 
     active = ActiveManager()
     all_objects = models.Manager()
@@ -50,6 +50,8 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
         default_manager_name = 'active'
+        verbose_name = 'Базовая модель'
+        verbose_name_plural = 'Базовые модели'
         
 
 
