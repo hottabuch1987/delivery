@@ -24,6 +24,10 @@ COPY entrypoint.sh /usr/src/app/entrypoint.sh
 # Делаем скрипт исполняемым
 RUN chmod +x /usr/src/app/entrypoint.sh
 
+# Устанавливаем права доступа для статики и медиафайлов
+# RUN mkdir -p /usr/src/app/static /usr/src/app/media && \
+#     chmod -R 755 /usr/src/app/static /usr/src/app/media
+
 # Устанавливаем точку входа
 ENTRYPOINT ["sh", "/usr/src/app/entrypoint.sh"]
 

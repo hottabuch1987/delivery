@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Promotion, EquipmentType, Equipment, UrgentConnection, Locality, ConnectionTypePlace, RequiredPayment
 
+
 @admin.register(Promotion)
 class PromotionAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'discount', 'is_active')

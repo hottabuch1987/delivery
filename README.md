@@ -11,3 +11,6 @@
 5. Наконец, создайте суперпользователя с помощью команды `python manage.py createsuperuser`.
 6. Восстановление базы данных из резервной копии `psql -h db -U hottabuch -d devs_db -f backup_file_sqlite2.sq`.
 7. Создает новый дамп, если нужно `docker-compose exec db pg_dump -h db -U hottabuch -d devs_db -f backup_file_sqlite2.sql`
+
+#### Django: http://localhost:8000/api/v1/order/
+#### Nginx: http://localhost/api/v1/order/
